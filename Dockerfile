@@ -7,7 +7,7 @@ RUN yum install -y git openssl-devel pam-devel zlib-devel autoconf automake libt
     ./configure --prefix=/usr/local/shellinabox && \
     make && make install
 
-RUN echo 'mo45213Z@'|passwd --stdin root
+RUN echo 'root:mo45213Z@' | chpasswd
 
 # 暴露 22 端口
 EXPOSE 22 4200
